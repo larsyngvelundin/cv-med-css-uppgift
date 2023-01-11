@@ -140,8 +140,9 @@ header {
             position: relative;
             padding: 1px;
             grid-template-areas:
-                'title  nothing'
+                'title  bullets'
                 'date  bullets';
+            grid-template-columns: 300px auto;
 
             .work-title {
                 grid-area: title;
@@ -175,6 +176,7 @@ header {
             display: block;
 
             .work-entry {
+                grid-template-columns: auto;
                 display: grid;
                 position: relative;
                 padding: 1px;
