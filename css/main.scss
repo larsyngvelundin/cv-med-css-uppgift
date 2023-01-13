@@ -1,9 +1,14 @@
 @import "normalize.scss";
 // @import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
 
-h2 {
-    margin: 0;
+.window-bar {
     color: #ffffff;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
 }
 
 body {
@@ -14,6 +19,18 @@ body {
 
 
 .border {
+    border-style: solid;
+    border-width: 2px;
+}
+
+.emboss-down {
+    border-color: #7c7c7c #fff #fff #7c7c7c;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.emboss-up {
+    border-color: #dfdfdf #4b4b4b #4b4b4b #dfdfdf;
     border-style: solid;
     border-width: 2px;
 }
@@ -105,14 +122,15 @@ header {
 
     section {
         // flex-grow: 1;
-        min-height: calc(100vh - 130px);
+        //min-height: calc(100vh - 130px);
         padding: 1px;
         margin: 3px;
         background-color: #c3c3c3;
 
-        .border {
+        .border-max-height {
             border-color: #ffffff;
-            min-height: calc(100vh - 45px);
+            //min-height: calc(100vh - 45px);
+
         }
 
         .window-bar {
@@ -135,10 +153,17 @@ header {
 
         }
 
+        .work-entry,
+        .skill-entry,
+        .education-entry {
+            margin: 2px;
+            padding: 1px 1px 1px 10px;
+        }
+
         .work-entry {
+            border-color: #7c7c7c #fff #fff #7c7c7c;
             display: grid;
             position: relative;
-            padding: 1px;
             grid-template-areas:
                 'title  bullets'
                 'date  bullets';
@@ -154,6 +179,60 @@ header {
 
             .work-bullets {
                 grid-area: bullets;
+            }
+        }
+
+        video,
+        img {
+            justify-self: center;
+            margin-bottom: 20px;
+        }
+
+
+        .sculpture-grid {
+
+            display: grid;
+            grid-template-areas:
+                'sculpt1  sculpt2'
+                'sculpt3  sculpt4';
+
+            img:nth-child(1) {
+                grid-area: sculpt1;
+            }
+
+            img:nth-child(2) {
+                grid-area: sculpt2;
+            }
+
+            img:nth-child(3) {
+                grid-area: sculpt3;
+            }
+
+            img:nth-child(4) {
+                grid-area: sculpt4;
+            }
+        }
+
+        .photo-manipulation-grid {
+            display: grid;
+            grid-template-areas:
+                'img1  video1'
+                'img2  video2';
+
+            video:nth-child(1) {
+                grid-area: video1;
+            }
+
+            video:nth-child(2) {
+                grid-area: video2;
+            }
+
+            img:nth-child(1) {
+                grid-area: img1;
+            }
+
+            img:nth-child(2) {
+                grid-area: img2;
             }
         }
     }
@@ -184,6 +263,22 @@ header {
                     'title'
                     'date'
                     'bullets';
+            }
+
+            .sculpture-grid {
+                grid-template-areas:
+                    'sculpt1'
+                    'sculpt2'
+                    'sculpt3'
+                    'sculpt4';
+            }
+
+            .photo-manipulation-grid {
+                grid-template-areas:
+                    'img1'
+                    'video1'
+                    'img2'
+                    'video2';
             }
         }
     }
